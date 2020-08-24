@@ -5,7 +5,7 @@ import { FormValidator, errorMessages } from "./script/FormValidator.js";
 import { Popup } from "./script/Popup.js";
 import { UserInfo } from "./script/UserInfo.js";
 import "./pages/index.css";
-console.log('asdas')
+
 (function () {
   const placeslist = document.querySelector(".places-list");
   const formEditProfile = document.querySelector("#formedit");
@@ -19,13 +19,11 @@ console.log('asdas')
   const buttonFormUser = document.querySelector("#button-user");
   const formname = document.querySelector("#username");
   const formjob = document.querySelector("#userjob");
-  // const API_URL =
-  //   NODE_ENV === "production"
-  //     ? "https://nomoreparties.co"
-  //     : "http://nomoreparties.co";
-
-  const baseUrl = 'https://nomoreparties.co/cohort11';
-  // const baseUrl = `${API_URL}/cohort11`;
+  const API_URL =
+    NODE_ENV === "production"
+      ? "https://nomoreparties.co"
+      : "http://nomoreparties.co";
+  const baseUrl = `${API_URL}/cohort11`;
   const key = "d1a2155d-67b7-493a-834b-dc7b3119f4ed";
 
   const validateFormCard = new FormValidator(formNewCard);
@@ -124,62 +122,3 @@ console.log('asdas')
     }
   });
 })();
-
-/// сделал 4 первых задания.
-
-/*
-Неплохая работа, запросы выполняются, класс Api создан и взаимодействет с сервером
-Но нужно исправить код в нескольких местах:
-
-Надо исправить:
-- адрес сервера и ключ авторизации передавать как параметры в конструктор класса Api // +
-- у запросов к серверу в конце должна быть обработка ошибок блоком catch, сейчас она есть не у всех запросов // +
-- при запросе данных профиля обновлять данные на странице с помощью метод updateUserInfo // +
-- при отправке данных профиля на сервер не делать ещё один запрос, а использовать данные которые вернул сервер // +
-- все изменения на странице - закрытие попапов, добавление карточки выполнять только если запрос
-выполнился успешно, т.е. в блоке then // +
-
-Можно лучше: 
-- проверка ответа сервера и преобразование из json
-дублируется во всех методах класса Api, лучше вынести в отдельный метод. // исправил
-
-
-*/
-
-/*
-  Отлично, все замечания исправлены
-
-  Для закрепления полученных знаний советую сделать и оставшуюся часть задания.
-  Что бы реализовать оставшуюся часть задания необходимо разобраться с Promise.all
-  https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
-  Т.к. для отрисовки карточек нужен id пользователя, поэтому отрисовать мы сможем их только
-  после полученния с сервера данных пользователя
-  Выглядит этот код примерно так:
-    Promise.all([     //в Promise.all передаем массив промисов которые нужно выполнить
-      this.api.getUserData(),
-      this.api.getInitialCards()
-    ])    
-      .then((values)=>{    //попадаем сюда когда оба промиса будут выполнены
-        const [userData, initialCards] = values;
-        ......................  //все данные получены, отрисовываем страницу
-      })
-      .catch((err)=>{     //попадаем сюда если один из промисов завершаться ошибкой
-        console.log(err);
-      })
-      
-
-  Если у Вас будет свободное время так же попробуйте освоить работу с сервером
-  применив async/await для работы с асинхронными запросами.
-  https://learn.javascript.ru/async-await
-  https://habr.com/ru/company/ruvds/blog/414373/
-  https://www.youtube.com/watch?v=SHiUyM_fFME
-  Это часто используется в реальной работе
-
-  Так же в некоторых местах есть замечания по форматированию кода - проблемы с отступами.
-  Об оформлении кода можно почитать здесь https://learn.javascript.ru/coding-style
-  Практически все современные редакторы умеют автоматически форматировать код. 
-  Постарайтесь настроить его, это сильно экономит время, а Ваш код будет всегда красив.
-  Одно из наиболее популярных дополнений для форматирования кода - Prettier (https://prettier.io/)
-
-  Успехов в дальнейшем обучении!
-*/
