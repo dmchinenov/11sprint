@@ -5,7 +5,7 @@ import { FormValidator, errorMessages } from "./script/FormValidator.js";
 import { Popup } from "./script/Popup.js";
 import { UserInfo } from "./script/UserInfo.js";
 import "./pages/index.css";
-
+console.log('asdas')
 (function () {
   const placeslist = document.querySelector(".places-list");
   const formEditProfile = document.querySelector("#formedit");
@@ -19,11 +19,13 @@ import "./pages/index.css";
   const buttonFormUser = document.querySelector("#button-user");
   const formname = document.querySelector("#username");
   const formjob = document.querySelector("#userjob");
-  const API_URL =
-    NODE_ENV === "production"
-      ? "https://nomoreparties.co"
-      : "http://nomoreparties.co";
-  const baseUrl = `${API_URL}/cohort11`;
+  // const API_URL =
+  //   NODE_ENV === "production"
+  //     ? "https://nomoreparties.co"
+  //     : "http://nomoreparties.co";
+
+  const baseUrl = 'https://nomoreparties.co/cohort11';
+  // const baseUrl = `${API_URL}/cohort11`;
   const key = "d1a2155d-67b7-493a-834b-dc7b3119f4ed";
 
   const validateFormCard = new FormValidator(formNewCard);

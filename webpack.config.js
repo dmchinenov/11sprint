@@ -35,7 +35,7 @@ module.exports = {
       {
         test: /\.(svg|jpg|gif|png)$/,
         use: [
-          "file-loader?name=./images/[name].[ext]", // указали папку, куда складывать изображения
+          "file-loader?name=./images/[name].[ext]", 
           {
             loader: "image-webpack-loader",
             options: {
@@ -65,7 +65,7 @@ module.exports = {
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-    }),
-  ],
+      'NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    })
+  ]
 };
