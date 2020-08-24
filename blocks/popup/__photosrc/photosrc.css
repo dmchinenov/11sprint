@@ -1,0 +1,7 @@
+.photosrc {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 0px;
+    position: relative;
+    box-sizing: border-box;
+  }
