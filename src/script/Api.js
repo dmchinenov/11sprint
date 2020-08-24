@@ -1,4 +1,4 @@
-class Api {
+export class Api {
     constructor(key, baseUrl) {
       this.key = key;
       this.baseUrl = baseUrl;
