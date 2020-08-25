@@ -6,6 +6,7 @@ const webpack = require("webpack");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const isDev = process.env.NODE_ENV === "development";
 
+
 module.exports = {
   entry: "./src/index.js",
   output: {

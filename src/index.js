@@ -19,10 +19,7 @@ import "./pages/index.css";
   const buttonFormUser = document.querySelector("#button-user");
   const formname = document.querySelector("#username");
   const formjob = document.querySelector("#userjob");
-  const API_URL =
-    NODE_ENV === "production"
-      ? "https://nomoreparties.co"
-      : "http://nomoreparties.co";
+  const API_URL = process.env.NODE_ENV === "production" ? "https://nomoreparties.co" : "http://nomoreparties.co";
   const baseUrl = `${API_URL}/cohort11`;
   const key = "d1a2155d-67b7-493a-834b-dc7b3119f4ed";
 
