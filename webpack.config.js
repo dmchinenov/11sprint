@@ -24,7 +24,12 @@ module.exports = {
         test: /\.css$/,
         use: [
           isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 2,
+            },
+          },
           "postcss-loader",
         ],
       },
@@ -35,7 +40,7 @@ module.exports = {
       {
         test: /\.(svg|jpg|gif|png)$/,
         use: [
-          "file-loader?name=./images/[name].[ext]", 
+          "file-loader?name=./images/[name].[ext]",
           {
             loader: "image-webpack-loader",
             options: {
@@ -65,7 +70,7 @@ module.exports = {
     }),
     new WebpackMd5Hash(),
     new webpack.DefinePlugin({
-      'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
-  ]
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    }),
+  ],
 };
