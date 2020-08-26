@@ -1,10 +1,10 @@
-const errorMessages = {
+export const errorMessages = {
   emptyinput: "Это обязательное поле",
   errorlength: "Должно быть от 2 до 30 символов",
   errorurl: "Здесь должна быть ссылка на картинку",
 };
 
-class FormValidator {
+export class FormValidator {
   constructor(form) {
     this.form = form;
   }

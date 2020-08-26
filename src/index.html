@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
+
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -38,44 +40,44 @@
     <!-- попап карточки -->
     <div id="cardpopup" class="popup">
       <div class="popup__content">
-        <img id="cardpopupclose" src="./images/close.svg" alt="" class="popup__close">
+        <img id="cardpopupclose" src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form id="formcard" novalidate class="popup__form" name="new">
-            <input type="text" id="cardname" name="name" required minlength="2" maxlength="30" class="popup__input popup__input_type_name" placeholder="Название">
-            <span id="cardnameerror" class="popup__errorspan"></span>
-            <input type="url" id="cardurl" name="link" required class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку">
-            <span id="cardurlerror" class="popup__errorspan"></span>
-            <button id="button-card" type class="button popup__button">+</button>
+          <input type="text" id="cardname" name="name" required minlength="2" maxlength="30"
+            class="popup__input popup__input_type_name" placeholder="Название">
+          <span id="cardnameerror" class="popup__errorspan"></span>
+          <input type="url" id="cardurl" name="link" required class="popup__input popup__input_type_link-url"
+            placeholder="Ссылка на картинку">
+          <span id="cardurlerror" class="popup__errorspan"></span>
+          <button id="button-card" type class="button popup__button">+</button>
         </form>
       </div>
     </div>
     <!-- попап профиля -->
     <div id="editpopup" class="popup">
       <div class="popup__content">
-        <img id="editpopupclose" src="./images/close.svg" alt="" class="popup__close">
+        <img id="editpopupclose" src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
         <h3 class="popup__title">Редактировать профиль</h3>
         <form id="formedit" novalidate class="popup__form" name="new">
-            <input type="text" id="username" name="name" required minlength="2" maxlength="30" class="popup__input popup__input_type_name" placeholder="Имя">
-            <span id="usernameerror" class="popup__errorspan"></span>
-            <input type="text" id="userjob" name="job" required minlength="2" maxlength="30" class="popup__input popup__input_type_link-url" placeholder="Специальность">
-            <span id="userjoberror" class="popup__errorspan"></span>
-            <button id="button-user" type class="button popup__button popup__button_user popup__button_valid">Сохранить</button>
+          <input type="text" id="username" name="name" required minlength="2" maxlength="30"
+            class="popup__input popup__input_type_name" placeholder="Имя">
+          <span id="usernameerror" class="popup__errorspan"></span>
+          <input type="text" id="userjob" name="job" required minlength="2" maxlength="30"
+            class="popup__input popup__input_type_link-url" placeholder="Специальность">
+          <span id="userjoberror" class="popup__errorspan"></span>
+          <button id="button-user" type
+            class="button popup__button popup__button_user popup__button_valid">Сохранить</button>
         </form>
       </div>
     </div>
     <!-- попап открытой картинки -->
     <div id="photopopup" class="popup">
       <div class="popup__photoblock">
-        <img id="photoclose" src="./images/close.svg" alt="" class="popup__close">
-        <img id="photosrc" src="" alt="" class="photosrc">
+        <img id="photoclose" src="<%=require('./images/close.svg').default%>" alt="" class="popup__close">
+        <img id="photosrc" src='' alt="" class="photosrc">
       </div>
     </div>
-  <script src='script/Api.js'></script>
-  <script src='script/FormValidator.js'></script>
-  <script src='script/UserInfo.js'></script>
-  <script src='script/Popup.js'></script>
-  <script src='script/Card.js'></script>
-  <script src='script/Cardlist.js'></script>
-  <script src='script/script.js'></script>
+    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>
+
 </html>

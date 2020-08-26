@@ -1,5 +1,4 @@
-
-class Card {
+export class Card {
   constructor(popupOpenPhoto) {
     this.popupOpenPhoto = popupOpenPhoto;
     this.openImage = this.openImage.bind(this);
